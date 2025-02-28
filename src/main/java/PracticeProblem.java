@@ -1,12 +1,14 @@
 public class PracticeProblem {
 
 	public static int lettersToFive(String sentence, char letter) {
-		int count = 0;
-		for (int i = 0; i < sentence.length(); ++i) {
+		if (sentence.length() == 0) return -1;
+		int count = 0, i = 0;
+		while (true) {
 			if (sentence.charAt(i) == letter) ++count;
 			if (count == 5) return i + 1;
+			else if (i == sentence.length() - 1) return -1;
+			++i;
 		}
-		return -1;
 	}
 
 	public static int countLetter(String sentence, char letter) {
